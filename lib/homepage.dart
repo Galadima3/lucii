@@ -18,19 +18,17 @@ class HomePage extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: MaterialButton(
-                onPressed: () async {
-                  if (await canLaunchUrlString(_url)) {
-                    await launchUrlString(_url);
-                  }
-                },
-                color: Colors.blueAccent,
-                child: Text(
-                  'URL',
-                  style: TextStyle(color: Colors.white),
-                ),
+            MaterialButton(
+              
+              onPressed: () async {
+                if (await canLaunchUrlString(_url)) {
+                  await launchUrlString(_url);
+                }
+              },
+              color: Colors.blueAccent,
+              child: Text(
+                'URL',
+                style: TextStyle(color: Colors.white),
               ),
             ),
             MaterialButton(
