@@ -35,7 +35,7 @@ class App extends ConsumerWidget {
   final List<Widget> screens = [
     const PhoneScreen(),
     MailScreen(),
-    const WebScreen(),
+    WebScreen(),
   ];
 
   @override

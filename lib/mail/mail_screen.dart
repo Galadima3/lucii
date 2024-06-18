@@ -6,11 +6,11 @@ import 'package:url_launcher/url_launcher.dart';
 class MailScreen extends ConsumerWidget {
   MailScreen({super.key});
 
-  final urlController = TextEditingController();
-  Future sendMail(String email) async{
+  final mailController = TextEditingController();
+  Future sendMail(String email) async {
     final Uri mail = Uri(scheme: 'mailto', path: email);
-    if (await canLaunchUrl(mail)){
-      await launchUrl(mail);  
+    if (await canLaunchUrl(mail)) {
+      await launchUrl(mail);
     } else {
       throw 'Could not send email to $mail';
     }
@@ -19,19 +19,19 @@ class MailScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      body: Center(child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        child: TextFormField(
-          controller: urlController,
-          decoration: InputDecoration(
-            prefixIcon: const Icon(Icons.mail),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12)
-            )
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: TextFormField(
+            controller: mailController,
+            decoration: InputDecoration(
+                prefixIcon: const Icon(Icons.mail),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12))),
+            onFieldSubmitted: (value) => sendMail(value),
           ),
-          onFieldSubmitted: (value) => sendMail(value) ,
         ),
-      ),),
+      ),
     );
   }
 }
