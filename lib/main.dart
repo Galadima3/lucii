@@ -1,28 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:lucii/mail/mail_screen.dart';
-import 'package:lucii/phone/phone_screen.dart';
-import 'package:lucii/web/web_screen.dart';
+import 'package:lucii/src/features/mail/mail_screen.dart';
+import 'package:lucii/src/features/phone/phone_screen.dart';
+import 'package:lucii/src/features/web/web_screen.dart';
+import 'package:lucii/src/theming/custom_theme.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({Key? key}) : super(key: key);
-
-  // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
-    return  MaterialApp(
+  Widget build(BuildContext context, WidgetRef ref) {
+    final theme = ref.watch(themeModeProvider);
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: CustomTheme.lightThemeData(context),
+      darkTheme: CustomTheme.darkThemeData(context),
+      themeMode: theme ? ThemeMode.light : ThemeMode.dark,
       home: App(),
-
-      //TODO
-      //1. Add BottomNavBar for each function
-      //2. change background color
-      //3. ensure it works
     );
   }
 }
@@ -41,7 +39,19 @@ class App extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final bottomNavBarIndex = ref.watch(bottomNavbarIndexProvider);
+    final themeMode = ref.watch(themeModeProvider);
     return Scaffold(
+      appBar: AppBar(
+        actions: [
+          IconButton(
+              onPressed: () => ref
+                  .read(themeModeProvider.notifier)
+                  .update((state) => !state),
+              icon: themeMode
+                  ? const Icon(Icons.light_mode)
+                  : const Icon(Icons.dark_mode))
+        ],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: bottomNavBarIndex,
         onTap: (value) => ref

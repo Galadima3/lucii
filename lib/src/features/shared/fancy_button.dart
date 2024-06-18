@@ -23,7 +23,7 @@ class FancyButton extends StatelessWidget {
         child: Center(
             child: Text(
           text,
-          style: const TextStyle(color: Colors.white, fontSize: 18.5),
+          style: Theme.of(context).textTheme.bodyMedium
         )),
       ),
     );

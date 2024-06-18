@@ -10,7 +10,9 @@ class WebScreen extends ConsumerWidget {
   Future<void> openURL(String site) async {
     final Uri url = Uri(scheme: 'https', host: site);
     if (await canLaunchUrl(url)) {
-      await launchUrl(url, mode: LaunchMode.inAppWebView, browserConfiguration: BrowserConfiguration(showTitle: true));
+      await launchUrl(url,
+          mode: LaunchMode.inAppWebView,
+          browserConfiguration: const BrowserConfiguration(showTitle: true));
     } else {
       throw 'Could not open $url';
     }

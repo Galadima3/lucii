@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:lucii/shared/fancy_button.dart';
+import 'package:lucii/src/features/shared/fancy_button.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 final phoneDigitsProvider = StateProvider<String>((ref) => "+2348108130598");
