@@ -13,7 +13,6 @@ class CustomTheme {
       ),
       appBarTheme: const AppBarTheme(
         color: Colors.blue,
-        //shadowColor: Colors.red,
         elevation: 5,
         foregroundColor: Colors.white,
       ),
@@ -35,10 +34,7 @@ class CustomTheme {
           fontWeight: FontWeight.bold,
           color: Colors.black,
         ),
-        bodyMedium: GoogleFonts.dmSans(
-          color: Colors.white,
-          fontSize: 15
-        ),
+        bodyMedium: GoogleFonts.dmSans(color: Colors.white, fontSize: 15),
       ),
     );
   }
@@ -54,7 +50,6 @@ class CustomTheme {
       ),
       appBarTheme: AppBarTheme(
         color: Colors.blue[800],
-        shadowColor: Colors.red,
         elevation: 5,
         foregroundColor: Colors.white,
       ),
@@ -77,14 +72,10 @@ class CustomTheme {
           fontWeight: FontWeight.bold,
           color: Colors.white,
         ),
-        bodyMedium: GoogleFonts.dmSans(
-          color: Colors.white,
-          fontSize: 15
-        ),
+        bodyMedium: GoogleFonts.dmSans(color: Colors.white, fontSize: 15),
       ),
     );
   }
 }
-
 
 final themeModeProvider = StateProvider<bool>((ref) => true);
