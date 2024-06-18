@@ -1,16 +1,45 @@
-# lucii
 
-A new Flutter project.
+# Lucii App
 
-## Getting Started
+Lucii is a flutter project that demonstrates the capabilities of the url_launcher package. It covers SMS, calls, mail & url. 
 
-This project is a starting point for a Flutter application.
+	
+## Technologies
+Project is created with:
+* Flutter version: 3.22
+* Dart version: 3.43
+* url_launcher version: 6.30
+	
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Run Locally
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Clone the project
+
+```bash
+  git clone https://github.com/Galadima3/lucii.git
+```
+
+Go to the project directory
+
+```bash
+  cd lucii
+```
+
+Install dependencies
+
+```bash
+  flutter pub get
+```
+
+Run app
+
+```bash
+  flutter run
+```
+
+
+## Screenshots
+
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+
