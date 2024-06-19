@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class CustomTheme {
   static ThemeData lightThemeData(BuildContext context) {
@@ -78,4 +79,4 @@ class CustomTheme {
   }
 }
 
-final themeModeProvider = StateProvider<bool>((ref) => true);
+
